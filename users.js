@@ -1,7 +1,13 @@
-require('dotenv').config();
-const express = require('express');
-const pick = require('lodash/pick');
-const { MongoClient, ObjectId } = require('mongodb');
+// require('dotenv').config();
+// const express = require('express');
+// const pick = require('lodash/pick');
+// const { MongoClient, ObjectId } = require('mongodb');
+import dotenv from 'dotenv';
+import express from 'express';
+import pick from 'lodash';
+import { MongoClient, ObjectId } from 'mongodb';
+
+dotenv.config();
 
 const clientPromise = new MongoClient(process.env.DB_URI, {
   minPoolSize: 10,
@@ -92,4 +98,6 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-module.exports = router;
+// module.exports = router;
+
+export default router;
