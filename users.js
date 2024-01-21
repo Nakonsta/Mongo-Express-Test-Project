@@ -9,10 +9,7 @@ import { MongoClient, ObjectId } from 'mongodb';
 
 dotenv.config();
 
-const clientPromise = new MongoClient(process.env.DB_URI, {
-  minPoolSize: 10,
-  maxPoolSize: 11,
-});
+const clientPromise = new MongoClient(process.env.DB_URI);
 
 const app = express();
 
